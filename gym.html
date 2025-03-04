@@ -1,82 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gym - Business Complex Name</title>
-  <style>
-    body {
-      background: #2c3e50; /* Dark blue-gray background */
-      color: #ddd;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      border-bottom: 1px solid #444;
-    }
-    .business-name {
-      font-size: 2em;
-      font-weight: bold;
-      margin-right: auto;
-    }
-    nav {
-      text-align: center;
-    }
-    nav a {
-      color: #aaa;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1.1em;
-    }
-    nav a:hover {
-      color: #fff;
-    }
-    .content {
-      padding: 40px;
-      min-height: 400px;
-    }
-    .stock-photo {
-      width: 100%;
-      max-height: 300px;
-      background: #333 url('gym-placeholder.jpg') center center no-repeat;
-      background-size: cover;
-      margin-bottom: 20px;
-    }
-    footer {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-    }
-    button {
-      cursor: not-allowed;
-      opacity: 0.6;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerHouse Gym</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FFD700;
+            --secondary: #007BFF;
+            --dark: #2A2A2A;
+            --light: #F4F4F4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Navigation Styles */
+        header {
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(42, 42, 42, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Section Common Styles */
+        section {
+            padding: 8rem 5% 4rem;
+            min-height: 100vh;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Home Section */
+        #home {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('gym-bg.jpg') center/cover fixed;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* About Section */
+        #about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Services Section */
+        #services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .dial-button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        /* Contact Section */
+        #contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            font-size: 2rem;
+            color: var(--light);
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            section {
+                grid-template-columns: 1fr;
+                padding: 6rem 5% 2rem;
+            }
+            
+            #about, #contact {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="business-name">Business Complex Name</div>
-    <nav>
-      <a href="carwash.html">Car Wash</a>
-      <a href="gym.html">Gym</a>
-      <a href="restaurant.html">Restaurant</a>
-      <a href="gaming.html">Gaming Center</a>
-      <a href="index.html">Home</a>
-    </nav>
-  </header>
-  <div class="content">
-    <div class="stock-photo">Gym Stock Photo Placeholder</div>
-    <h1>Gym</h1>
-    <p>Our state-of-the-art gym features modern equipment, expert trainers, and flexible membership plans designed to help you reach your fitness goals.</p>
-    <button disabled>Join Now</button>
-  </div>
-  <footer>
-    <p>Location: [Address] | Contact: [Phone] | Email: [Email Address]</p>
-  </footer>
+    <header>
+        <div class="logo">PowerHouse</div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="active">
+        <div class="hero-content">
+            <h1>Transform Your Body at PowerHouse</h1>
+            <button class="cta-button">Start Your Journey</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>With over 10 years of experience...</p>
+        </div>
+        <div class="about-image">
+            <img src="about-img.jpg" alt="Gym Interior">
+        </div>
+    </section>
+
+    <section id="services">
+        <!-- Service cards with dial buttons -->
+        <div class="service-card">
+            <h3>Personal Training</h3>
+            <button class="dial-button" onclick="window.location.href='tel:+1234567890'">
+                Call Now
+            </button>
+        </div>
+        <!-- Add more service cards -->
+    </section>
+
+    <section id="testimonials">
+        <!-- Testimonial cards -->
+    </section>
+
+    <section id="contact">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="map">
+            <!-- Embedded Google Map -->
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll and section animations
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Intersection Observer for section animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Mobile menu toggle
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            header.style.background = window.scrollY > 50 ? 'rgba(42, 42, 42, 0.95)' : 'transparent';
+        });
+    </script>
 </body>
 </html>
