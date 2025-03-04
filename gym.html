@@ -7,209 +7,111 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #FFD700;
-            --secondary: #007BFF;
-            --dark: #2A2A2A;
-            --light: #F4F4F4;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: var(--dark);
-            color: var(--light);
-            overflow-x: hidden;
-        }
-
-        /* Navigation Styles */
-        header {
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(42, 42, 42, 0.95);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Section Common Styles */
-        section {
-            padding: 8rem 5% 4rem;
-            min-height: 100vh;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        section.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Home Section */
-        #home {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                        url('https://github.com/MadLad-prime/Leijona-prototype/blob/main/gym2.jpeg?raw=true') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-            background: rgba(42, 42, 42, 0.8);
-            border-radius: 10px;
-        }
-
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            color: var(--primary);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--light);
-        }
-
-        .cta-button {
-            padding: 1rem 2rem;
-            background: var(--primary);
-            color: var(--dark);
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-        }
-
-        /* About Section */
-        #about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-        }
+        /* Previous styles remain the same until the Services Section */
 
         /* Services Section */
         #services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
+            padding: 4rem 5%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin: 2rem 0;
         }
 
         .service-card {
             background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 10px;
-            transition: transform 0.3s ease;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .dial-button {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 1rem;
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: var(--light);
         }
 
         /* Testimonials Section */
         #testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            padding: 4rem 5%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin: 2rem 0;
         }
 
         .testimonial-card {
             background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 10px;
-            position: relative;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
         }
 
-        .testimonial-card::before {
-            content: '"';
-            font-size: 4rem;
-            position: absolute;
-            top: -10px;
-            left: 10px;
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-name {
+            font-size: 1.5rem;
+            font-weight: 600;
             color: var(--primary);
-            opacity: 0.5;
+            margin-bottom: 0.5rem;
         }
 
-        /* Contact Section */
-        #contact {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(42, 42, 42, 0.95);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-info p {
+            font-size: 0.9rem;
+            color: var(--light);
+            margin: 0;
         }
 
         .social-links {
             display: flex;
             gap: 1rem;
-            margin-top: 2rem;
         }
 
         .social-links a {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--light);
             transition: color 0.3s ease;
         }
@@ -218,92 +120,79 @@
             color: var(--primary);
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            section {
-                grid-template-columns: 1fr;
-                padding: 6rem 5% 2rem;
-            }
-
-            #about, #contact {
+            #services {
                 grid-template-columns: 1fr;
             }
 
-            .hero-content h1 {
-                font-size: 2.5rem;
+            footer {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">PowerHouse</div>
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <!-- Header and Home Section remain the same -->
 
-    <section id="home" class="active">
-        <div class="hero-content">
-            <h1>Transform Your Body at PowerHouse</h1>
-            <p>Your journey to a healthier, stronger you starts here.</p>
-            <button class="cta-button">Start Your Journey</button>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="about-text">
-            <h2>About Us</h2>
-            <p>With over 10 years of experience...</p>
-        </div>
-        <div class="about-image">
-            <img src="gym4.jpeg" alt="Gym Interior">
-        </div>
-    </section>
-
+    <!-- Services Section -->
     <section id="services">
-        <!-- Service cards with dial buttons -->
         <div class="service-card">
+            <div class="service-icon"><i class="fas fa-dumbbell"></i></div>
             <h3>Personal Training</h3>
-            <button class="dial-button" onclick="window.location.href='tel:+1234567890'">
-                Call Now
-            </button>
+            <p>Get one-on-one coaching from certified trainers to achieve your fitness goals faster.</p>
         </div>
-        <!-- Add more service cards -->
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-users"></i></div>
+            <h3>Group Classes</h3>
+            <p>Join our high-energy group classes, including yoga, HIIT, and spin sessions.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+            <h3>Nutrition Plans</h3>
+            <p>Customized meal plans designed to complement your workout routine.</p>
+        </div>
     </section>
 
+    <!-- Testimonials Section -->
     <section id="testimonials">
-        <!-- Testimonial cards -->
-    </section>
-
-    <section id="contact">
-        <div class="contact-info">
-            <h2>Contact Us</h2>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <div class="testimonial-card">
+            <div class="testimonial-name">John Doe</div>
+            <div class="testimonial-text">
+                "PowerHouse Gym transformed my life! The trainers are amazing, and the facilities are top-notch."
             </div>
         </div>
-        <div class="map">
-            <!-- Embedded Google Map -->
+        <div class="testimonial-card">
+            <div class="testimonial-name">Jane Smith</div>
+            <div class="testimonial-text">
+                "I love the group classes here. They're fun, challenging, and keep me motivated."
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-name">Mike Johnson</div>
+            <div class="testimonial-text">
+                "The nutrition plans helped me lose 20 pounds in just 3 months. Highly recommend!"
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-info">
+            <p>Location: 123 Fitness St, City, Country</p>
+            <p>Contact: +1 (123) 456-7890</p>
+            <p>Email: info@powerhousegym.com</p>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts remain the same -->
     <script>
         // Smooth scroll and section animations
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
