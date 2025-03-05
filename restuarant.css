@@ -15,6 +15,14 @@ header {
   color: #fff;
 }
 
+header.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(51, 51, 51, 0.9);
+}
+
 .logo {
   font-size: 24px;
   font-weight: bold;
@@ -68,7 +76,9 @@ footer {
 /* Menu Page Styles */
 .menu-background {
   height: 300px;
-  background-color: #ccc; /* Placeholder for image */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
 }
 
 .menu-content {
@@ -99,6 +109,30 @@ footer {
 
 .dropdown-content a:hover {
   background-color: #ddd;
+}
+
+/* Contact Page Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  padding: 10px;
+  background-color: #ff5733;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* Responsive Design */
