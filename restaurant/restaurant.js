@@ -17,9 +17,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Image slideshow for the Menu page background
 let currentSlide = 0;
 const slides = [
-  "url('https://github.com/MadLad-prime/Leijona-prototype/blob/main/salad.jpeg')", // Replace with actual image paths
-  "url('https://github.com/MadLad-prime/Leijona-prototype/blob/main/steak.jpeg')",
-  "url('https://github.com/MadLad-prime/Leijona-prototype/blob/main/stew.jpeg?raw=true')"
+  "url('placeholder1.jpg')", // Replace with actual image paths
+  "url('placeholder2.jpg')",
+  "url('placeholder3.jpg')"
 ];
 
 function changeBackground() {
