@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nairobi Eats - Contact</title>
   <link rel="stylesheet" href="restaurant.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <header>
@@ -20,22 +21,33 @@
   </header>
 
   <section class="contact">
-    <h2>Contact Us</h2>
-    <p>Visit us at our location or reach out via phone or email.</p>
-    <div class="contact-info">
-      <p>Email: info@nairobi-eats.com</p>
-      <p>Phone: +254 700 123 456</p>
-    </div>
-    <div class="map-placeholder"></div>
+    <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3><i class="fas fa-map-marker-alt"></i> Find Us</h3>
+        <p>123 Restaurant Street</p>
+        <p>Nairobi, Kenya</p>
+        
+        <h3><i class="fas fa-phone"></i> Call Us</h3>
+        <p>+254 123 456 789</p>
+        
+        <h3><i class="fas fa-clock"></i> Hours</h3>
+        <p>Monday - Sunday: 11:00 AM - 10:00 PM</p>
+      </div>
 
-    <!-- Contact Form -->
-    <form class="contact-form">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
   </section>
 
   <footer>
