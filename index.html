@@ -5,58 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Business Complex Name - Home</title>
   <style>
+    /* Global Styles */
     body {
       background: #000; /* Glossy black */
       color: #fff;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header Styles */
     header {
       display: flex;
       align-items: center;
-      padding: 20px;
-      border-bottom: 1px solid #444;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: linear-gradient(90deg, #111, #000);
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
     .business-name {
       font-size: 2em;
       font-weight: bold;
-      margin-right: auto;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
+
     nav {
-      text-align: center;
+      display: flex;
+      gap: 20px;
     }
+
     nav a {
       color: #ccc;
-      text-decoration: none;
-      margin: 0 15px;
       font-size: 1.1em;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
+
     nav a:hover {
       color: #fff;
+      transform: translateY(-3px);
     }
+
+    /* Content Styles */
     .content {
-      padding: 40px;
-      min-height: 400px;
+      padding: 60px 40px;
+      text-align: center;
     }
-    .stock-photo {
-      width: 100%;
-      max-height: 300px;
-      background: #222 url('stock-home.jpg') center center no-repeat;
+
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('stock-home.jpg') center center no-repeat;
       background-size: cover;
-      margin-bottom: 20px;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease-in-out;
     }
+
+    .hero h1 {
+      font-size: 4em;
+      font-weight: bold;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+      animation: slideUp 1.5s ease-in-out;
+    }
+
+    .intro-text {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2em;
+      color: #ddd;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Footer Styles */
     footer {
-      background: #111;
+      background: linear-gradient(90deg, #111, #000);
       padding: 20px;
       text-align: center;
       font-size: 0.9em;
+      color: #ccc;
+      border-top: 1px solid #333;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+      }
+
+      .business-name {
+        margin-bottom: 10px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .content {
+        padding: 40px 20px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="Leijona">Business Complex Name</div>
+    <div class="business-name">Business Complex Name</div>
     <nav>
       <a href="carwash.html">Car Wash</a>
       <a href="gym.html">Gym</a>
@@ -65,9 +153,12 @@
     </nav>
   </header>
   <div class="content">
-    <div class="stock-photo">Stock Photo Placeholder</div>
-    <h1>Welcome</h1>
-    <p>This integrated facility features a car wash, gym, restaurant, and gaming center. Explore each page to see how a professional online presence can boost your business.</p>
+    <div class="hero">
+      <h1>Welcome</h1>
+    </div>
+    <p class="intro-text">
+      This integrated facility features a car wash, gym, restaurant, and gaming center. Explore each page to see how a professional online presence can boost your business. Experience the ultimate blend of convenience and luxury.
+    </p>
   </div>
   <footer>
     <p>Location: [Address] | Contact: [Phone] | Email: [Email Address]</p>
